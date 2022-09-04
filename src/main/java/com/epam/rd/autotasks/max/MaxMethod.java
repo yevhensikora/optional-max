@@ -4,6 +4,18 @@ import java.util.OptionalInt;
 
 public class MaxMethod {
     public static OptionalInt max(int[] values) {
-        throw new UnsupportedOperationException();
+        //throw new UnsupportedOperationException();
+        OptionalInt res;
+        if(values != null && values.length !=0){
+            int max = values[0];
+            for(int value : values){
+                if(value> max) max = value;
+            }
+            res = OptionalInt.of(max);
+        }
+        else{
+            res = OptionalInt.empty();
+        }
+        return res;
     }
 }
